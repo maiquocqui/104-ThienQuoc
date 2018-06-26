@@ -1,0 +1,104 @@
+footer
+	background: url(../img/footerbg.jpg) center center repeat
+	padding: 50px 0 0
+	.footer-wrap
+		+flexbox
+		flex-wrap: wrap
+		margin: 0px -35px
+		align-items: flex-start
+		align-content: flex-start
+	.footer-about
+		width: 250px
+		padding: 0px 35px
+		+pos(rel,null)
+		+media-breakpoint-down(md)
+			width: 100%
+			margin-bottom: 30px
+		&:before
+			content: ''
+			+pos(abs, 0 -1px 0 null)
+			width: 1px
+			background: $white
+			opacity: 0.2
+			+media-breakpoint-down(md)
+				display: none
+		.sitelogo
+			padding: 25px 0
+		ul
+			li
+				+fs(13rem)
+				color: darken($white,50%)
+				padding-left: 20px
+				+pos(rel,null)
+				margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+				.fa
+					+pos(abs, 3px null null 0)
+	.footer-main
+		width: calc(100% - 250px)
+		padding: 0px 35px
+		+media-breakpoint-down(md)
+			width: 100%
+	.footer-col
+		margin-bottom: 20px
+	.footer-title
+		+fs(16rem)
+		text-transform: uppercase
+		font-weight: 600
+		color: $red
+		margin-bottom: 20px
+		+media-breakpoint-down(lg)
+			+fs(14rem)
+	.footer-link
+		a
+			display: block
+			+fs(14rem)
+			color: darken($white,40%)
+			margin-bottom: 15px
+			+media-breakpoint-down(lg)
+				+fs(13rem)
+			&:hover
+				color: $white
+	.footer-subscribe
+		.footer-title
+			margin-bottom: 10px
+		.subscribe-des
+			+fs(13rem)
+			color: darken($white,40%)
+		.subscribe
+			padding-top: 20px
+		.subscribefrm
+			+flexbox
+			align-items: center
+			align-content: center
+			border-bottom: 1px solid darken($white,60%)
+			input
+				background: none
+				margin: 0
+				padding: 0
+				border: none
+				color: $white
+				+fs(13rem)
+				width: calc(100% - 50px)
+				&::-webkit-input-placeholder
+					font-style: italic
+					color: inherit
+					opacity: 0.3
+			.subscribebutton
+				+fs(0)
+				width: 50px
+				text-align: right
+				color: $red
+				&:before
+					content: '\f1d8'
+					+fs(22rem)
+					line-height: 50px
+	.copyright
+		margin-top: 30px
+		padding: 15px 15px
+		background: $white
+		text-align: center
+		+fs(13rem)
+		line-height: 25px
+		color: darken($white,50%)

@@ -1,0 +1,97 @@
+.page-tab
+	ul, .nav-tabs
+		margin: 0
+		padding: 0
+		background: none
+		border: none
+		+bor-rad(0)
+		+flexbox
+		justify-content: center
+		+media-breakpoint-down(lg)
+			display: block
+			text-align: center
+			white-space: nowrap
+			overflow: auto
+		li, .nav-item
+			margin: 0
+			padding: 0
+			background: none
+			border: none
+			+bor-rad(0)
+			+transition(all,0s)
+			+media-breakpoint-down(lg)
+				display: inline-block
+			+ li, + .nav-item
+				margin-left: -5px
+			a, .nav-link
+				display: block
+				+fs(14rem)
+				text-transform: uppercase
+				line-height: 16px
+				padding: 10px 35px
+				color: $white
+				background: $bluegrey
+				-webkit-clip-path: polygon(20px -1%, 100% -1%, calc(100% - 20px) 100%, 0% 100%)
+				clip-path: polygon(20px -1%, 100% -1%, calc(100% - 20px) 100%, 0% 100%)
+				border: none
+				+bor-rad(0)
+				+media-breakpoint-down(md)
+				&:hover
+					color: $white
+					background: $red
+				&.active, &.mPS2id-highlight
+					color: $white
+					background: $red
+			&.active
+				a, .nav-link
+					color: $white
+					background: $red
+
+.responsivetabs
+	@extend .page-tab
+	.tabs-list
+		justify-content: flex-start
+		border-bottom: 2px solid $red
+		.tab-item
+			+ .tab-item
+				margin-left: -20px
+			a
+				background: darken($white,4%)
+				+fs(15rem)
+				text-transform: uppercase
+				color: darken($white,40%)
+				line-height: 20px
+				padding: 10px 40px
+			&:hover, &.r-tabs-state-active
+				a
+					background: $red
+					color: $white
+	.r-tabs-accordion-title
+		margin-top: 10px
+		a
+			display: block
+			+fs(14rem)
+			text-transform: uppercase
+			background: darken($white,4%)
+			line-height: 20px
+			padding: 10px 20px
+			+pos(rel,null)
+			&:after
+				content: '\f107'
+				+pos(abs, 10px 20px null null)
+				+transition(all,0.5s)
+		&.r-tabs-state-active
+			a
+				background: $red
+				color: $white
+				&:after
+					+transform(scale(1,-1))
+	.tab-content
+		padding: 20px 0px 30px
+		border-bottom: 1px solid darken($white,5%)
+		+media-breakpoint-down(md)
+			padding: 20px
+			border: 1px solid darken($white,5%)
+			border-top: none
+		+media-breakpoint-down(sm)
+			padding: 15px

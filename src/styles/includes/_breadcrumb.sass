@@ -1,0 +1,29 @@
+.breadcrumb-wrap
+	+media-breakpoint-down(sm)
+		// margin-bottom: -20px
+	.breadcrumb-img
+		img
+			width: 100%
+			+media-breakpoint-down(md)
+				height: 250px
+				object-fit: cover
+			+media-breakpoint-down(sm)
+				height: 150px
+	.breadcrumb
+		justify-content: flex-end
+		background: none
+		margin: 0
+		padding: 15px 0
+		+bor-rad(0)
+		li
+			color: $red
+			&:before
+				content: '\f105'
+				margin: 0px 10px
+			&:first-child
+				&:before
+					display: none
+			a
+				+fs(12rem)
+				line-height: 20px
+				font-weight: 300
