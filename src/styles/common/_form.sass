@@ -14,33 +14,18 @@
 
 // BUTTON
 .btn
-	-webkit-clip-path: polygon(20px -1%, 100% -1%, calc(100% - 20px) 100%, 0% 100%)
-	clip-path: polygon(20px -1%, 100% -1%, calc(100% - 20px) 100%, 0% 100%)
-	padding: 0px 40px
-	+fs(14rem)
-	+bor-rad(0)
-	color: $white
-	background: $red
-	text-transform: uppercase
-	line-height: 36px
-	&:hover
-		background: darken($red,10%)
 .btn-submit
 	@extend .btn
-	display: inline-block
-	line-height: 36px
+	background: $blue
+	line-height: 30px
+	+fs(18rem)
+	padding: 0px 20px
+	+bor-rad(5px)
+	color: $white
+
 
 .btn-viewmore
 	@extend .btn
-	display: inline-block
-	line-height: 40px
-	+fs(15rem)
-	font-weight: 300
-	+media-breakpoint-down(lg)
-		line-height: 36px
-		+fs(14rem)
-	&:hover
-		color: $white
 
 
 // FORM INIT
@@ -48,29 +33,30 @@ input, textarea, select
 	font-family: inherit
 .form-wrap, .apply-frm
 	.form-group
-		// margin-bottom: 15px
+		margin-bottom: 10px
+		label
+			+fs(15rem)
+			line-height: 1
 		input, textarea, select
 			@extend .form-control
-			background: darken($white,6%)
+			background: $white
 			width: 100%
 			+bor-rad(0px)
-			line-height: 20px
+			line-height: 18px
 			+fs(14rem)
 			color: $main
-			padding: 0.625rem 1.25rem
-			border-color: darken($white,6%)
-			font-family: 'Montserrat', sans-serif
+			padding: 0.5rem 1.25rem
+			border-color: $white
+			font-family: 'open sans', sans-serif
 			&:active, &:focus
-				background: darken($white,10%)
-				border-color: lighten($red,20%)
-				box-shadow: 0 0 0 0.2rem color-rgba($red,0.3)
+				border-color: $blue
+				box-shadow: 0 0 0 0.2rem color-rgba($blue,0.3)
 		textarea
 			min-height: 110px
 	.frm-btn
 		padding: 10px 5px 0
 	input[type="submit"]
 		@extend .btn-submit
-		line-height: 36px
 .frm-btnwrap
 	label
 		display: none

@@ -1,3 +1,6 @@
+.slick-slide
+	.item
+		display: block !important
 .banner-wrap
 .banner
 	.item
@@ -13,71 +16,56 @@
 		+transform(translateY(-50%))
 		color: $white
 		text-shadow: 0px 3px 5px color-rgba($black,0.1)
+		background: color-rgba($black,0.2)
+		width: 40px
+		height: 80px
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: center
+		+media-breakpoint-down(md)
+			width: 30px
+			height: 50px
 		&:before
 			content: ''
 			font-family: 'linearicons-free'
 			+fs(28rem)
+			+media-breakpoint-down(md)
+				+fs(18rem)
 	.slick-prev
-		left: 100px
-		+media-breakpoint-down(lg)
-			left: 30px
-		+media-breakpoint-down(sm)
-			left: 10px
+		left: 0
 		&:before
 			content: '\e875'
 	.slick-next
-		right: 100px
-		+media-breakpoint-down(lg)
-			right: 30px
-		+media-breakpoint-down(sm)
-			right: 10px
+		right: 0
 		&:before
 			content: '\e876'
-	.banner-caption
-		+pos(abs,null null 140px 50%)
-		+transform(translateX(-50%))
-		+fs(36rem)
-		color: $white
-		text-align: center
-		max-width: 1140px
-		width: 100%
-		+media-breakpoint-down(lg)
-			bottom: 60px
-			+fs(28rem)
-			padding: 0px 15px
-		+media-breakpoint-down(md)
-			+fs(24rem)
-			bottom: 40px
-		+media-breakpoint-down(sm)
-			+fs(16rem)
+	
 	.slick-dots
-		+pos(abs, null 0 110px 0)
+		+pos(abs, null 10px 10px null)
 		text-align: center
-		+media-breakpoint-down(lg)
-			bottom: 20px
 		li
 			display: inline-block
-			width: 50px
-			height: 3px
-			-webkit-clip-path: polygon(4px -2%, 100% -2%, 46px 100%, 0% 100%)
-			clip-path: polygon(4px -2%, 100% -2%, 46px 100%, 0% 100%)
-			background: $white
-			cursor: pointer
-			+media-breakpoint-down(sm)
-				width: 30px
-				-webkit-clip-path: polygon(4px -2%, 100% -2%, 26px 100%, 0% 100%)
-				clip-path: polygon(4px -2%, 100% -2%, 26px 100%, 0% 100%)
 			+ li
-				margin-left: 4px
+				margin-left: 5px
 			button
-				display: none
+				+flexbox
+				align-items: center
+				align-content: center
+				justify-content: center
+				+fs(12rem)
+				line-height: 1
+				font-weight: 300
+				width: 18px
+				height: 18px
+				+bor-rad(50px)
+				background: $white
+				color: $main
 			&.slick-active
-				background: $red
+				button
+					background: $blue
+					color: $white
 	.item
 		.banner-img
 			img
-				+media-breakpoint-down(md)
-					height: 400px
-					object-fit: cover
-				+media-breakpoint-down(sm)
-					height: 300px
+				width: 100%

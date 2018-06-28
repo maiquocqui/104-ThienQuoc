@@ -1,0 +1,129 @@
+.product-page
+	padding: 30px 0
+.product-list
+	.row
+		margin: 0px -10px
+	.col-6
+		padding: 0px 10px
+.product-col
+	margin-bottom: 20px
+	figure
+		+pos(rel,null)
+		.product-img
+			img
+				width: 100%
+		figcaption
+			text-align: center
+			+flexbox
+			flex-wrap: wrap
+			align-items: flex-end
+			align-content: flex-end
+			justify-content: center
+			+pos(abs, 0 null 0 0)
+			right: 0
+			padding: 10px 0
+			background: linear-gradient(color-rgba($black,0),color-rgba($black,1))
+			opacity: 0
+			visibility: hidden
+			+transition(all,0.5s)
+			.product-name
+				+fs(18rem)
+				line-height: 1.2
+				color: $white
+				width: 100%
+			.product-link
+				+fs(12rem)
+				color: $white
+				opacity: 0.6
+				&:after
+					content: '\f101'
+					margin-left: 5px
+	&:hover
+		figure
+			figcaption
+				visibility: visible
+				opacity: 1
+
+.product-slide-wrap
+	.product-slide
+		margin-bottom: 10px
+		.slick-prev, .slick-next
+			+pos(abs, 50% null null null)
+			+fs(0)
+			z-index: 3
+			+transform(translateY(-50%))
+			color: $white
+			text-shadow: 0px 3px 5px color-rgba($black,0.1)
+			// background: color-rgba($black,0.2)
+			width: 40px
+			height: 80px
+			+flexbox
+			align-items: center
+			align-content: center
+			justify-content: center
+			+media-breakpoint-down(md)
+				width: 30px
+				height: 50px
+			&:before
+				content: ''
+				font-family: 'linearicons-free'
+				+fs(28rem)
+				+media-breakpoint-down(md)
+					+fs(18rem)
+		.slick-prev
+			left: 0
+			&:before
+				content: '\e875'
+		.slick-next
+			right: 0
+			&:before
+				content: '\e876'
+		.img
+			display: block
+			img
+				width: 100%
+	.product-nav
+		.slick-list
+			margin: 0px -5px
+		.item
+			padding: 0px 5px
+
+.product-info
+	.tabs-list
+		+flexbox
+		margin-bottom: 5px
+		.tab-item
+			a
+				display: block
+				padding: 10px 15px
+				+fs(16rem)
+				line-height: 20px
+				color: $blue
+				background: darken($white,8%)
+				+bor-rad(3px)
+	.tab-content
+		padding: 20px
+		+bor-rad(3px)
+		background: darken($white,8%)
+		ul
+			list-style-type: none
+			padding-left: 0
+
+.product-other
+	.module-title
+		+fs(25rem)
+		font-weight: 300
+		text-transform: uppercase
+		text-align: center
+		padding: 10px 0
+		background: darken($white,8%)
+	.product-slick
+		.product
+			height: 100px
+			+flexbox
+			align-items: center
+			align-content: center
+			justify-content: center
+			img
+				max-width: 80%
+				max-height: 80%

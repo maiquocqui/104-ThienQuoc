@@ -1,0 +1,236 @@
+header
+	.header-top
+		background: darken($white,8%)
+	.col-right
+		width: 100%
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: flex-end
+	.search
+		+pos(rel,null)
+		.search-toggle
+			height: 32px
+			+flexbox
+			align-items: center
+			align-content: center
+			+fs(18rem)
+			color: darken($white,40%)
+			cursor: pointer
+			+media-breakpoint-down(md)
+				height: 30px
+			&:hover
+				color: $blue
+		.search-wrap
+			display: none
+			+pos(abs, 100% 0 null null)
+			z-index: 3
+			width: 230px
+			background: $white
+			.searchbox
+				+flexbox
+				align-items: center
+				align-content: center
+				justify-content: space-between
+				border: 1px solid darken($white,10%)
+				box-shadow: 0px 3px 10px color-rgba($black,0.1)
+				padding: 7px 10px
+				background: $white
+				input
+					margin: 0
+					padding: 0
+					border: none
+					width: calc(100% - 40px)
+				.searchbutton
+					color: darken($white,40%)
+					+fs(18rem)
+					&:hover
+						color: $blue
+	.language
+		+flexbox
+		align-items: center
+		align-content: center
+		margin-left: 30px
+		+media-breakpoint-down(md)
+			margin-left: 20px
+		a
+			display: block
+			+fs(18rem)
+			font-weight: 300
+			+ a
+				margin-left: 10px
+			&:hover
+				color: $blue
+			&.active
+				color: $blue
+				font-weight: 700
+	.header-wrap
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: space-between
+	.sitelogo
+		+flexbox
+		align-items: center
+		align-content: center
+		justify-content: center
+		height: 100px
+		+media-breakpoint-down(md)
+			height: 50px
+		a
+			display: block
+		img
+			+media-breakpoint-down(md)
+				height: 40px
+	.btn-showmenu
+		display: none
+		+media-breakpoint-down(md)
+			+flexbox
+			width: 32px
+			height: 32px
+			+bor-rad(3px)
+			+fs(18rem)
+			justify-content: center
+			align-content: center
+			align-items: center
+			color: $blue
+			border: 1px solid darken($white,10%)
+	.overlay
+		+pos(fix, 0 null 0 0)
+		right: 0
+		z-index: 800
+		background: $black
+		opacity: 0.7
+		display: none
+	.menu
+		+media-breakpoint-down(md)
+			+pos(fix,0 null 0 0)
+			width: 280px
+			background: $white
+			z-index: 1000
+			overflow: auto
+			+transition(all,0.5s)
+			+transform(translateX(-100%))
+			&.open
+				+transform(translateX(0%))
+		.menu-logo
+			display: none
+			+media-breakpoint-down(md)
+				+flexbox
+				justify-content: center
+				padding: 20px 0
+				background: darken($white,5%)
+				.sitelogo
+					height: auto
+				img
+					height: 80px
+		.menu-wrap
+			ul.menu-link
+				+flexbox
+				align-items: center
+				align-content: center
+				+pos(rel,null)
+				+media-breakpoint-down(md)
+					display: block
+				> li
+					+flexbox
+					align-items: center
+					align-content: center
+					height: 100px
+					+media-breakpoint-down(md)
+						height: auto
+						display: block
+					+ li
+						margin-left: 30px
+						+media-breakpoint-down(md)
+							margin-left: 0
+					&:first-child
+						+media-breakpoint-up(lg)
+							> a
+								+fs(0)
+								&:before
+									content: '\f015'
+									+fs(24rem)
+									color: $blue
+									font-weight: normal
+							&:hover, &.active
+								> a
+									border-color: transparent
+					> a
+						display: block
+						+fs(17rem)
+						font-weight: 700
+						text-transform: uppercase
+						color: darken($white,60%)
+						border-bottom: 2px solid transparent
+						+media-breakpoint-down(md)
+							padding: 10px 20px
+					&.has-mega
+						+media-breakpoint-down(md)
+							+pos(rel,null)
+						.btn-showsub
+							+pos(abs, 10px 20px null null)
+							z-index: 1
+							display: none
+							+media-breakpoint-down(md)
+								display: block
+							&:before
+								content: '\f107'
+								+fs(18rem)
+						.mega
+							display: none
+							+pos(abs, 100% 0 null null)
+							z-index: 5
+							background: color-rgba(darken($white,5%),0.95)
+							width: 950px
+							box-shadow: 5px 5px 10px color-rgba($black,0.3)
+							+media-breakpoint-down(md)
+								+pos(static,null)
+								width: 100%
+								padding: 10px
+								box-shadow: none
+							ul.mega-link
+								+flexbox
+								+media-breakpoint-down(md)
+									flex-direction: column
+								> li
+									flex: 1
+									margin-bottom: 15px
+									+media-breakpoint-down(md)
+										margin-bottom: 5px
+									> a
+										display: block
+										+fs(14rem)
+										font-weight: 600
+										text-transform: uppercase
+										line-height: 1
+										padding: 7px 10px
+										+media-breakpoint-down(md)
+											padding: 10px
+											background: $blue
+											color: $white
+										&:hover
+											background: $blue
+											color: $white
+									.mega-sub
+										> ul
+											> li
+												padding: 0px 10px
+												> a
+													+fs(14rem)
+													color: darken($white,60%)
+													border-bottom: 2px solid transparent
+													&:hover
+														color: $blue
+														border-bottom-color: $blue
+
+					&:hover
+						+media-breakpoint-up(lg)
+							> a
+								color: $blue
+							.mega
+								display: block
+					&.active
+						> a
+							color: $blue
+							border-bottom-color: $blue

@@ -2,21 +2,24 @@ header
 	.header-top
 		.container
 			.header-wrap
-				.search
-					.search-toggle <i class="fa fa-search" aria-hidden="true"></i>
-					.search-wrap
-						.searchbox
-							input(type="text")
-							button.searchbutton <i class="fa fa-search" aria-hidden="true"></i>
-				.language
-					a.active(href="#!") VN
-					a(href="#!") EN
+				.col-right
+					.search
+						.search-toggle <i class="fa fa-search" aria-hidden="true"></i>
+						.search-wrap
+							.searchbox
+								input(type="text")
+								button.searchbutton <i class="fa fa-search" aria-hidden="true"></i>
+					.language
+						a.active(href="#!") VN
+						a(href="#!") EN
 	.header-bottom
 		.container
 			.header-wrap
 				.sitelogo
 					a(href="index.html")
 						img(src="img/logo.png", alt="")
+				.btn-showmenu <i class="fa fa-bars" aria-hidden="true"></i>
+				.overlay 
 				.menu
 					.menu-logo
 						.sitelogo
@@ -30,6 +33,7 @@ header
 								a(href="#!") Giới thiệu
 							li.has-mega
 								a(href="#!") Sản phẩm
+								.btn-showsub
 								.mega
 									ul.mega-link
 										li

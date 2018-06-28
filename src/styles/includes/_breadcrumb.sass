@@ -1,6 +1,5 @@
 .breadcrumb-wrap
-	+media-breakpoint-down(sm)
-		// margin-bottom: -20px
+	background: darken($white,10%)
 	.breadcrumb-img
 		img
 			width: 100%
@@ -10,20 +9,25 @@
 			+media-breakpoint-down(sm)
 				height: 150px
 	.breadcrumb
-		justify-content: flex-end
 		background: none
 		margin: 0
-		padding: 15px 0
+		padding: 10px 0
 		+bor-rad(0)
 		li
-			color: $red
 			&:before
-				content: '\f105'
-				margin: 0px 10px
+				content: ''
+				display: inline-block
+				vertical-align: middle
+				height: 18px
+				width: 1px
+				background: darken($white,40%)
+				margin: 0px 5px
+				+transform(rotateZ(-20deg))
 			&:first-child
 				&:before
 					display: none
 			a
-				+fs(12rem)
+				+fs(15rem)
 				line-height: 20px
 				font-weight: 300
+				color: $main
